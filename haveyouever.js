@@ -69,7 +69,7 @@ setInterval(function() {
  catch (e) {
     console.log(e);
   }
-}, parseInt(config.interval) >= 120000 ? parseInt(config.interval) : 120000);
+}, parseInt(config.interval) >= 120000 ? parseInt(config.interval) : 1200000;
 
 // every 5 hours, check for people who have RTed a metaphor, and favorite that metaphor
 setInterval(function() {
