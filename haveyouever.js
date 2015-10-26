@@ -2,7 +2,6 @@ var restclient = require('node-restclient');
 var Twit = require('twit');
 var config = require("./config.json");
 
-
 // Add your Twitter and Wordnik API info to config.json
 var API_KEY = config.API_KEY;
 var consumer_key = config.consumer_key;
@@ -27,7 +26,9 @@ function makeQuestion() {
   restclient.get(getVerbURL,
 
   function(data) {
-    console.log(data.word);
+    odds = Math.floor(Math.random() * (10 - 1 + 1) + 1);
+    if (odds == 1)
+      statement += "Tell me something, my friend: ";
     statement += "You ever " + data.word + " with the devil in the pale moonlight?";
 
     console.log(statement);
